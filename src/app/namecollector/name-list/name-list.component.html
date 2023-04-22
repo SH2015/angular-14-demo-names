@@ -1,0 +1,7 @@
+<form name="names">
+  <div *ngFor="let name of fullnames; let i = index">
+    <label>
+      <input type="text" [name]="'name_' + i" [(model)]="name" />
+    </label>
+  </div>
+</form>
