@@ -1,7 +1,22 @@
-<form name="names">
-  <div *ngFor="let name of fullnames; let i = index">
-    <label>
-      <input type="text" [name]="'name_' + i" [(model)]="name" />
-    </label>
+<p>Names List:{{this.fullnames.length }}</p>
+<form name="names" #frm="ngForm">
+   
+  <div *ngFor="let username  of  fullnames; let i = index; trackBy:trackByFn" class="container-fluid" >
+    <div class="row">
+      <div class="col">
+        <label > Enter Full Name Here#{{i}} </label>
+      </div>
+      <div class="col">
+        <input type="text" [name]="'name_' + i" [id]="'name_' + i"  [(ngModel)]='fullnames[i]'   />
+      </div>
+    </div>
+   
+     
   </div>
+  <button class="btn-outline-primary" (click)="addNew()" >Add New name </button><br>
+  <button class="btn btn-success" (click)="generateTable()" >generate Table</button>
 </form>
+<br />
+ 
+
+<app-weekly-schedule [Config] ="config"></app-weekly-schedule>

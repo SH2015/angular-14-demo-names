@@ -121,12 +121,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss" 
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "72c900df-20a1-4c5b-b102-3ab40dcc4b5d"
   }
 }
