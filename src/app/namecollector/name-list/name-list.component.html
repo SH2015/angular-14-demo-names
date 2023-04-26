@@ -1,13 +1,14 @@
 <p>Names List:{{this.fullnames.length }}</p>
 <form name="names" #frm="ngForm">
    
-  <div *ngFor="let username  of  fullnames; let i = index; trackBy:trackByFn" class="container-fluid" >
+  <div *ngFor="let username  of  fullnames; let i = index; trackBy:trackByFn" (ngModelChange)="movefocus($event)"  class="container-fluid" >
     <div class="row">
       <div class="col">
         <label > Enter Full Name Here#{{i}} </label>
       </div>
       <div class="col">
-        <input type="text" [name]="'name_' + i" [id]="'name_' + i"  [(ngModel)]='fullnames[i]'   />
+        <input type="text" [name]="'name_' + i" [id]="'name_' + i" #inputtext 
+         [(ngModel)]='fullnames[i]'  />
       </div>
     </div>
    
